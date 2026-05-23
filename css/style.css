@@ -1,78 +1,128 @@
-* {
-    box-sizing: border-box;
-}
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
     background-color: white;
     color: black;
+    transition: 0.3s;
 }
 
-.skip-link {
-    position: absolute;
-    left: -9999px;
-}
-
-.skip-link:focus {
-    left: 10px;
-    top: 10px;
-    background: black;
+/* DARK MODE */
+body.dark-mode {
+    background-color: #111827;
     color: white;
-    padding: 10px;
-    z-index: 1000;
 }
 
+/* HEADER */
 header {
-    background-color: #222;
-    padding: 1rem;
+    background-color: #0f172a;
+    padding: 20px;
 }
 
+/* DARK MODE HEADER */
+body.dark-mode header {
+    background-color: black;
+}
+
+/* NAV */
 nav ul {
-    list-style: none;
     display: flex;
+    justify-content: center;
     gap: 20px;
+    list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
+/* BUTTON */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* MAIN */
 main {
-    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
 }
 
-section {
-    margin-bottom: 2rem;
+/* HERO */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* CARDS */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #e2e8f0;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+/* DARK MODE CARDS */
+body.dark-mode .card {
+    background-color: #1e293b;
+    color: white;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
 }
 
 input,
-textarea,
-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 8px;
+textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-button {
-    cursor: pointer;
-}
-
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-    outline: 3px solid blue;
-    outline-offset: 2px;
-}
-
+/* FOOTER */
 footer {
-    background-color: #222;
+    background-color: #0f172a;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* DARK MODE FOOTER */
+body.dark-mode footer {
+    background-color: black;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
